@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Javascript Components</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div>
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">Send Now</button>
+
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a href="#" class="dropdown-item">Send Now</a></li>
+                <li><a href="#" class="dropdown-item">Save Draft</a></li>
+                <hr class="dropdown-divider">
+                <li><a href="#" class="dropdown-item">Preview</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div>
+        <p>
+            <a href="#item" class="btn btn-primary" data-bs-toggle="collapse">
+                Link Button
+            </a>
+        </p>
+
+        <div class="collapse" id="item">
+            <div class="card card-body bg-secondary text-light">
+                <h5 class="card-title"></h5>
+                <p>Some sample content</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#feedback">Show Modal</button>
+
+        <div class="modal fade" id="feedback">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Feedback</h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary">Send Feedback</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="carousel slide" data-bs-ride="carousel" id="slide">
+
+            <ol class="carousel-indicators">
+                <li data-bs-target="#slide" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#slide" data-bs-slide-to="1"></li>
+                <li data-bs-target="#slide" data-bs-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="bg-primary" style="height: 200px"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="bg-success" style="height: 200px"></div>
+                </div>
+                <div class="carousel-item active">
+                    <div class="bg-warning" style="height: 200px"></div>
+                </div>
+            </div>
+
+            <a href="#slide" class="carousel-control-prev" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#slide" class="carousel-control-next" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <span class="spinner-border text-primary"></span>
+        <span class="spinner-border text-success"></span>
+        <span class="spinner-border text-warning"></span>
+        <span class="spinner-border text-danger"></span>
+
+        <div class="mt-5 mb-5">
+            <button class="btn btn-primary" disabled>
+                <span class="spinner-border spinner-border-sm"></span>
+                <span class="ml-2">Loading ...</span>
+            </button>
+        </div>
+
+        <span class="spinner-grow text-primary"></span>
+        <span class="spinner-grow text-success"></span>
+        <span class="spinner-grow text-warning"></span>
+        <span class="spinner-grow text-danger"></span>
+    </div>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
