@@ -1,53 +1,25 @@
-class Animal {
-    constructor(name){
-        this.name = name;
+function add1000() {
+    let result = 0;
+    
+    for(let i=0; i<1000; i++) {
+        result += i;
     }
-
-    run() {
-        console.log(`${this.name} is running...`)
-    }
+    return result;
 }
 
-class Dog extends Animal {
-    bark() {
-        console.log(`${this.name}: Woof.. woof..`)
-    }
+function add1000later() {
+    return new Promise( (resolve, reject) => {
+        let result = add1000();
+
+        if(result) resolve(result);
+        else reject();
+    })
 }
 
-class Cat extends Animal {
-    constructor(name, color) {
-        super(name);
-        this.color = color;
-    }
+console.log("some processes")
+add1000later()
+    .then( result => "$" + result)
+    .then( result => console.log(result) )
+    .catch( () => console.log("Something wrong!"))
+console.log("more processes")
 
-    meow() {
-        console.log(`${this.name}: Mewo... meow...`)
-    }
-}
-
-let cat_1 = new Cat("Shwe War", "Yellow")
-new Promise( finish => {finish(cat_1.meow())});
-
-
-const a = 4;
-const b = 2;
-
-// Traditional anonymous function
-(function (a, b) {
-    return a + b + 100;
-  });
-  
-  // Arrow function
-  (a, b) => a + b + 100;
-  
-  
-  // Traditional anonymous function (no parameters)
-  (function () {
-    return a + b + 100;
-  });
-  
-  // Arrow function (no parameters)
-  () => a + b + 100;
-  
-
-console.log((() => 100)())
