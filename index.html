@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test.html</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="box1">
+        Box One Content
+    </div>
+    <div id="box2">
+        Box Two Content
+    </div>
+    <div id="box3">
+        Box Three Content
+    </div>
+    <div id="box4">
+        Box Four Content
+    </div>
+    <div id="box5">
+        Box Five Content
+    </div>
+    <div id="box6" class="main-class extra-class">
+        Box Six Content
+    </div>
+    <p>
+        Some content <b id="badge">10</b>
+    </p>
+
+
+
+
+    <script>
+        document.querySelector("#box1").textContent = "Hello <b>DOM</b>"; // use this
+        document.querySelector("#box2").innerHTML = "Hello <b>DOM</b>"; // may cause security leakage
+
+        let hello = document.createTextNode("Hello DOM.");
+        document.querySelector('#box3').appendChild(hello);
+
+        let hello_2 = document.createElement("b");
+        hello_2.textContent = "Hello, this is ";
+        let box4 = document.querySelector("#box4");
+        box4.insertBefore(hello_2, box4.firstChild)
+
+        let hello_3 = document.createElement("b");
+        hello_3.textContent = "Hello DOM. 3";
+        hello_3.setAttribute("title", "A new element");
+        document.querySelector("div").appendChild(hello_3).classList.add("alert", "info");
+
+        let copy = hello_3.cloneNode(true);
+        document.querySelector("#box2").appendChild(copy)
+
+        document.querySelector("#box5").remove();
+        setInterval(() => document.querySelector("#box6").classList.toggle("extra-class"), 1000)
+
+        let p = document.querySelector("#badge").parentNode;
+        p.classList.toggle("haha")
+    </script>
+</body>
+</html>

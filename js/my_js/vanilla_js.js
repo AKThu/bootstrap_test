@@ -23,3 +23,8 @@ add1000later()
     .catch( () => console.log("Something wrong!"))
 console.log("more processes")
 
+//async and await
+async function add1000later_2() {
+    let result = await add1000()
+    console.log(result)
+}
